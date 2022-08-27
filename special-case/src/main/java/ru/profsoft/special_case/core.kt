@@ -14,7 +14,7 @@ fun <T>TextView.setWithDefaultValue(specialCase: SpecialCase<T>) {
     text = specialCase.value.toString()
 }
 
-fun <T> View.with(specialCase: SpecialCase<T>) {
+private fun <T> View.with(specialCase: SpecialCase<T>) {
     isVisible = specialCase.isShow
 }
 
@@ -24,7 +24,7 @@ fun String?.toSpecialCase(defaultValue: String = "") =
         defaultValue = defaultValue
     )
 
-fun Double?.toSpecialCase(defaultValue: Double = 0.toDouble()) =
+fun Double?.toSpecialCase(defaultValue: Double = Double.NaN) =
     SpecialCase(
         value = this,
         defaultValue = defaultValue

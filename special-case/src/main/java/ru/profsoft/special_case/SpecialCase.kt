@@ -5,5 +5,4 @@ data class  SpecialCase<out T: Any?>(
     val defaultValue: T
     ) {
     val isShow: Boolean = value != null
-
 }
