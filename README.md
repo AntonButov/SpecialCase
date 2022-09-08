@@ -1,2 +1,2 @@
 # SpecialCase
-Implimentation of pattern Special Case for Android net response.
+Implementation of pattern Special Case for Android net response.
