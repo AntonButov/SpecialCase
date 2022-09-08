@@ -7,7 +7,7 @@ import io.mockk.mockk
 import io.mockk.verify
 import org.junit.Assert.*
 
-class coreTests {
+class CoreTests {
 
     private val nullString
     get() = (null as String?)
@@ -28,6 +28,14 @@ class coreTests {
         }
 
     @Test
+    fun mapType() {
+        val specialCase = nullString.toSpecialCase(defaultValue = "defaultString")
+        val mapCase = specialCase.map { it + "newValue" }
+        assertNull(mapCase.value)
+        assertEquals(mapCase.defaultValue,  "defaultString" + "newValue")
+    }
+
+    @Test
     fun mapNotNull() {
         val specialCase = stringValue.toSpecialCase()
         val mapCase = specialCase.map { it.length }
@@ -40,7 +48,7 @@ class coreTests {
         val defaultString = "defaultString"
         val specialCase = nullString.toSpecialCase(defaultString)
         val mapCase = specialCase.map { it.length }
-        assertEquals(mapCase.value, defaultString.length)
+        assertEquals(mapCase.defaultValue, defaultString.length)
         assertFalse(specialCase.isShow)
     }
 
