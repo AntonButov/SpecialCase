@@ -30,7 +30,7 @@ fun String?.toSpecialCase(defaultValue: String = "") =
         defaultValue = defaultValue
     )
 
-fun Double?.toSpecialCase(defaultValue: Double = Double.NaN) =
+fun Double?.toSpecialCase(defaultValue: Double = 0.toDouble()) =
     SpecialCase(
         value = this,
         defaultValue = defaultValue
