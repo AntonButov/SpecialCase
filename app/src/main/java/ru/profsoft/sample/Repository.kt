@@ -2,10 +2,10 @@ package ru.profsoft.sample
 
 class Repository {
 
-    fun getData(): Response =
+    fun getData(): Model =
         Response(
             nullableString = null,
             noNullableDouble = 100.toDouble()
-        )
+        ).toModel()
 
 }

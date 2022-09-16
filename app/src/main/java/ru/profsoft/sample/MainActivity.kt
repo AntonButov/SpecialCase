@@ -14,11 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-            viewModel.getData().also {
+            viewModel.getData().also { uiModel ->
                 val tvFirst = findViewById<TextView>(R.id.tvFirst)
-                tvFirst.set(it.nullableString)
+                tvFirst.set(uiModel.title)
                 val tvSecond = findViewById<TextView>(R.id.tvSecond)
-                tvSecond.set(it.noNullableDouble)
+                tvSecond.set(uiModel.count)
             }
     }
 

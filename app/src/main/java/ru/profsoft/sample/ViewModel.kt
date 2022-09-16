@@ -3,11 +3,11 @@ package ru.profsoft.sample
 import androidx.lifecycle.ViewModel
 import ru.profsoft.special_case.map
 
-class ViewModel: ViewModel() {
+class ViewModel : ViewModel() {
 
     private val repo = Repository()
 
-
-    fun getData() = repo.getData().toModel()
-
+    fun getData(): UiModel = repo
+        .getData()
+        .mapToUiModel()
 }
