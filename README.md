@@ -34,8 +34,8 @@ Sample:
   	          viewModel.getData().also { uiModel ->
    	             val tvFirst = findViewById<TextView>(R.id.tvFirst)
    	             tvFirst.set(uiModel.title)
-  	              val tvSecond = findViewById<TextView>(R.id.tvSecond)
-  	              tvSecond.set(uiModel.count)
+  	             val tvSecond = findViewById<TextView>(R.id.tvSecond)
+  	             tvSecond.set(uiModel.count)
   	          }
  	   }
 
