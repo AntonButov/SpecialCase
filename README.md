@@ -19,31 +19,26 @@ How use:
 
 Sample:
 
-data class Response(
-    val nullableString: String?,
-    val noNullableDouble: Double?
-    ) {
-    fun toModel() = Model(
-        nullableString = nullableString.toSpecialCase(),
-        noNullableDouble = noNullableDouble.toSpecialCase()
-    )
-
-}
-
-class MainActivity : AppCompatActivity() {
-
-    private val viewModel: ViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-            viewModel.getData().also { uiModel ->
-                val tvFirst = findViewById<TextView>(R.id.tvFirst)
-                tvFirst.set(uiModel.title)
-                val tvSecond = findViewById<TextView>(R.id.tvSecond)
-                tvSecond.set(uiModel.count)
-            }
-    }
+	data class Response(
+       	   val nullableString: String?,
+ 	   val noNullableDouble: Double?
+  	  ) {
+ 	   fun toModel() = Model(
+ 	       nullableString = nullableString.toSpecialCase(),
+ 	       noNullableDouble = noNullableDouble.toSpecialCase()
+ 	   )
+	}
+	class MainActivity : AppCompatActivity() {
+  	  private val viewModel: ViewModel by viewModels()
+  	  override fun onCreate(savedInstanceState: Bundle?) {
+  	      super.onCreate(savedInstanceState)
+  	      setContentView(R.layout.activity_main)
+  	          viewModel.getData().also { uiModel ->
+   	             val tvFirst = findViewById<TextView>(R.id.tvFirst)
+   	             tvFirst.set(uiModel.title)
+  	              val tvSecond = findViewById<TextView>(R.id.tvSecond)
+  	              tvSecond.set(uiModel.count)
+  	          }
+ 	   }
 
 
