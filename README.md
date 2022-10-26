@@ -19,15 +19,13 @@ How use:
 
 Sample:
 
-	data class Response(
-       	   val nullableString: String?,
- 	   val noNullableDouble: Double?
-  	  ) {
+	data class Response(val nullableString: String?, val noNullableDouble: Double?) {
  	   fun toModel() = Model(
  	       nullableString = nullableString.toSpecialCase(),
  	       noNullableDouble = noNullableDouble.toSpecialCase()
  	   )
 	}
+	
 	class MainActivity : AppCompatActivity() {
   	  private val viewModel: ViewModel by viewModels()
   	  override fun onCreate(savedInstanceState: Bundle?) {
