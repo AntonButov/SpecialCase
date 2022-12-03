@@ -35,3 +35,15 @@ fun Double?.toSpecialCase(defaultValue: Double = 0.toDouble()) =
         value = this,
         defaultValue = defaultValue
     )
+
+fun Float?.toSpecialCase(defaultValue: Float = 0.toFloat()) =
+    SpecialCase(
+        value = this,
+        defaultValue = defaultValue
+    )
+
+fun Int?.toSpecialCase(defaultValue: Int = 0.toInt()) =
+    SpecialCase(
+        value = this,
+        defaultValue = defaultValue
+    )
