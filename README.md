@@ -39,4 +39,22 @@ Sample:
   	          }
  	   }
 
-
+	For compose:
+	setContent {
+		    MaterialTheme {
+			viewModel.getData().also { uiModel ->
+			    with(uiModel) {
+				title.With {
+				    Text(
+					text = it
+				    )
+				}
+				count.With {
+				    Text(
+					text = it
+				    )
+				}
+			    }
+			}
+		    }
+		}
