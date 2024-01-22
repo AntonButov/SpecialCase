@@ -2,7 +2,7 @@
 Implementation of pattern Special Case for Android net response.
 
 How use:
-
+```
 	allprojects {
 		repositories {
 			...
@@ -15,10 +15,10 @@ How use:
   	dependencies {
 	        implementation 'com.github.AntonButov:SpecialCase:1.0.0'
 	}
-
+```
 
 Sample:
-
+```
 	data class Response(val nullableString: String?, val noNullableDouble: Double?) {
  	   fun toModel() = Model(
  	       nullableString = nullableString.toSpecialCase(),
@@ -38,8 +38,9 @@ Sample:
   	             tvSecond.set(uiModel.count)
   	          }
  	   }
-
-	For compose:
+```
+For compose:
+ ```
 	setContent {
 		    MaterialTheme {
 			viewModel.getData().also { uiModel ->
@@ -54,3 +55,4 @@ Sample:
 			}
 		    }
 		}
+```
