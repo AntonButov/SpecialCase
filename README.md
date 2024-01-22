@@ -45,14 +45,10 @@ Sample:
 			viewModel.getData().also { uiModel ->
 			    with(uiModel) {
 				title.With {
-				    Text(
-					text = it
-				    )
+				    Text(text = it)
 				}
 				count.With {
-				    Text(
-					text = it
-				    )
+				    Text(text = it)
 				}
 			    }
 			}
